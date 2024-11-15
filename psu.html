@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is a PSU</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #0d0d0d, #000000);
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        header {
+            background: linear-gradient(to right, #ff4500, #ff6347);
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        header h1 {
+            color: #ffffff;
+            margin: 0;
+        }
+        .container {
+            margin: 80px 20px 20px 20px;
+            flex: 1;
+        }
+        .faq {
+            margin-bottom: 20px;
+        }
+        .faq h2 {
+            color: #ff6347;
+        }
+        .faq p, .faq ul, .faq ol {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 10px 0;
+        }
+        .faq p:hover, .faq ul:hover, .faq ol:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        footer {
+            background-color: #262626;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+        }
+        footer p {
+            margin: 0;
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="icon.png" alt="PS2 Homebrew Icon">
+        <h1>What is a PSU</h1>
+    </header>
+    <div class="container">
+        <div class="faq">
+            <h2>A Simple Guide to .PSU Files for PS2 Homebrew Beginners</h2>
+            <h3>What is a .PSU?</h3>
+            <p>A <code>.psu</code> file is like a <strong>.zip file</strong>, but instead of extracting to your computer, it extracts a folder and its files directly to a PS2 memory card using the <strong>"psupaste"</strong> function in wLaunchELF/uLaunchELF.</p>
+            
+            <h3>Why Use .PSU Files?</h3>
+            <ul>
+                <li><strong>Convenience</strong>: Packages applications with their settings, icons, and other required files, ready to go with minimal effort.</li>
+                <li><strong>Easy Installation</strong>: A one-step process to get your apps fully set up and running.</li>
+                <li><strong>Built-in Management</strong>: Manage your applications straight from the PS2 Memory Card Browser, including copying and deleting.</li>
+            </ul>
+
+            <h3>How to Install .PSU Files</h3>
+            <ol>
+                <li><strong>Save the <code>.psu</code> files</strong> you want to install onto a USB storage device.</li>
+                <li><strong>Prepare Your PS2</strong>
+                    <ul>
+                        <li>Plug the USB into your PS2.</li>
+                        <li>Launch <strong>wLaunchELF</strong> or <strong>uLaunchELF</strong> (any version works).</li>
+                    </ul>
+                </li>
+                <li><strong>Copy the .PSU Files</strong>
+                    <ul>
+                        <li>Open the <strong>File Manager</strong> in wLaunchELF.</li>
+                        <li>Navigate to <code>mass:/</code> (this is your USB device).</li>
+                        <li>Find the <code>.psu</code> files you downloaded.</li>
+                        <li>Highlight the one(s) you want to install and press <strong>R1</strong>, then select <strong>Copy</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Paste with PSUPaste</strong>
+                    <ul>
+                        <li>Press <strong>Triangle</strong> to navigate back until you can access <code>mc0:/</code> or <code>mc1:/</code> (memory card in slot 1 or 2).</li>
+                        <li>Go into <code>mc0:/</code> or <code>mc1:/</code> and press <strong>R1</strong>, then select <strong>PSUPaste</strong>.</li>
+                        <li>Ensure you are pasting to the root of the memory card (not inside another folder).</li>
+                        <li>Once the process finishes, the application is installed!</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>After Installation</h3>
+            <h4>For OPL Users:</h4>
+            <ul>
+                <li>On recent OPL versions, your apps will automatically show up in the <strong>Apps</strong> section.</li>
+                <li>To save space on your memory card, move the apps to <code>mass:/APPS/</code> (on USB) after extraction. Example: <code>mass:/APPS/APP_OPL/OPL.ELF</code> and its related files.</li>
+            </ul>
+            
+            <h4>For FMCB Users:</h4>
+            <ol>
+                <li>Open the <strong>FMCB Configurator</strong>:
+                    <ul>
+                        <li>From the FMCB menu, choose <strong>FMCB Configurator</strong>.</li>
+                        <li>Alternatively, launch <code>FMCB_CFG.ELF</code> from <code>mc0:/SYS-CONF/</code> or <code>mc1:/SYS-CONF/</code> in wLaunchELF.</li>
+                    </ul>
+                </li>
+                <li>Map the Application:
+                    <ul>
+                        <li>Choose your button layout.</li>
+                        <li>Scroll down to <strong>Configure OSDSYS Settings...</strong>.</li>
+                        <li>Go to Configure Item 1, and scroll to the right with the d-pad.</li>
+                        <li>Find an empty slot and name it (e.g., <code>OPL</code>).</li>
+                        <li>Highlight <strong>Path1</strong>, press <strong>Square</strong>, and navigate to the <code>.ELF</code> file of your app (e.g., <code>mc0:/APP_OPL/OPL.ELF</code>).</li>
+                    </ul>
+                </li>
+                <li>Save and Exit:
+                    <ul>
+                        <li>Select Return, then Select Return Again.</li>
+                        <li>Save changes to <code>MC0</code>, <code>MC1</code>, or <code>MASS</code>, depending on your setup.</li>
+                        <li>Exit the Configurator and enjoy your new application!</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Special Instructions for Certain .PSU Files</h3>
+            <p>The following .psu files require subfolders that require extra care during installation:</p>
+            <ul>
+                <li><code>!RTE_ATHENAENV.PSU</code></li>
+                <li><code>!RTE_ENCELADUS.PSU</code></li>
+                <li><code>!RTE_NEUTRINO.PSU</code></li>
+            </ul>
+            <p><strong>How to Install Subfolder Dependent .PSU Files:</strong></p>
+            <ol>
+                <li>Copy and PSUPaste the `.psu` file as usual.</li>
+                <li>Download additional .psu files as needed and PSUPaste into matching parent folders.</li>
+            </ol>
+            <p><strong>Important</strong>: Installing subfolders or multiple subfolder .psu files can corrupt your memory card.</p>
+
+            <h4>SMS and APP_SMS:</h4>
+            <p><strong>APP_SMS</strong>: The application itself.</p>
+            <p><strong>SMS</strong>: Stores settings for APP_SMS (location hard-coded).</p>
+        </div>
+    </div>
+    <footer>
+        <p>2024 PS2 Homebrew FAQ</p>
+    </footer>
+</body>
+</html>
